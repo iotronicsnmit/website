@@ -114,9 +114,6 @@ function renderAllProjects() {
                         ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                 </div>
-                <div class="project-status">
-                    <span class="status-badge ${project.status}">${getStatusLabel(project.status)}</span>
-                </div>
                 <a href="${project.detailPage}" class="btn-outline">View Details</a>
             </div>
         </div>
