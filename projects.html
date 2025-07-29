@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Iotronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><span class="logo-text">Iotronics</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">
+                    <span class="gradient-text">Our</span> Projects
+                </h1>
+                <p class="page-subtitle">
+                    Discover our latest innovations and breakthrough technologies that are shaping the future of IoT.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-detailed">
+        <div class="container">
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="iot">IoT Systems</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="sustainability">Sustainability</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+            </div>
+
+            <div class="projects-grid-detailed" id="projects-container">
+                <div class="project-card-detailed" data-category="iot">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">WiFi</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>Smart Campus Network</h3>
+                        <p class="project-description">
+                            A comprehensive IoT-enabled campus monitoring system with real-time data analytics, 
+                            environmental sensing, and automated building management capabilities.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>Real-time environmental monitoring</li>
+                                <li>Energy consumption tracking</li>
+                                <li>Automated lighting and HVAC control</li>
+                                <li>Mobile dashboard for facility management</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge active">Active Development</span>
+                        </div>
+                        <a href="project-smart-campus.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="ai">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>AI Learning Assistant</h3>
+                        <p class="project-description">
+                            A machine learning powered educational companion that provides personalized learning 
+                            experiences and adaptive content delivery for students.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>Personalized learning paths</li>
+                                <li>Natural language processing</li>
+                                <li>Progress tracking and analytics</li>
+                                <li>Multi-modal content support</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Beta Testing</span>
+                        </div>
+                        <a href="project-ai-assistant.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="sustainability">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Sustainability</span>
+                            <span class="tech-tag">Sensors</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>Sustainable Energy Monitor</h3>
+                        <p class="project-description">
+                            Real-time energy consumption tracking and optimization system that helps reduce 
+                            carbon footprint through intelligent monitoring and automated controls.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>Smart meter integration</li>
+                                <li>Predictive energy optimization</li>
+                                <li>Carbon footprint calculation</li>
+                                <li>Automated energy saving recommendations</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge active">Active Development</span>
+                        </div>
+                        <a href="project-energy-monitor.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="robotics">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">ROS</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>Autonomous Delivery Robot</h3>
+                        <p class="project-description">
+                            An autonomous robot designed for campus delivery services with advanced navigation, 
+                            obstacle avoidance, and package management capabilities.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>LIDAR-based navigation</li>
+                                <li>Computer vision for obstacle detection</li>
+                                <li>Secure package compartment</li>
+                                <li>Mobile app integration</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge planning">Planning Phase</span>
+                        </div>
+                        <a href="project-delivery-robot.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="iot">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Blockchain</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>IoT Security Framework</h3>
+                        <p class="project-description">
+                            A blockchain-based security framework for IoT devices that ensures data integrity, 
+                            device authentication, and secure communication protocols.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>Blockchain-based device identity</li>
+                                <li>End-to-end encryption</li>
+                                <li>Anomaly detection system</li>
+                                <li>Secure firmware updates</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge research">Research Phase</span>
+                        </div>
+                        <a href="project-security-framework.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="ai">
+                    <div class="project-image-detailed">
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Edge Computing</span>
+                        </div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>Smart Traffic Management</h3>
+                        <p class="project-description">
+                            An intelligent traffic management system using computer vision and IoT sensors 
+                            to optimize traffic flow and reduce congestion in urban areas.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>Real-time traffic analysis</li>
+                                <li>Adaptive signal control</li>
+                                <li>Pedestrian detection and safety</li>
+                                <li>Emergency vehicle priority</li>
+                            </ul>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <a href="project-traffic-management.html" class="btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Proposal Section -->
+    <section class="project-proposal">
+        <div class="container">
+            <div class="proposal-content">
+                <h2>Have a Project Idea?</h2>
+                <p>We're always excited to work on new and innovative projects. If you have an idea or want to collaborate with us, let's discuss how we can bring it to life.</p>
+                <div class="proposal-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>Submit Your Idea</h4>
+                        <p>Share your project concept with our team</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>Technical Review</h4>
+                        <p>We'll evaluate feasibility and requirements</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>Collaboration</h4>
+                        <p>Work together to develop the solution</p>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">Propose a Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Iotronics</span>
+                    <p>Innovating Tomorrow</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="events.html">Events</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Iotronics Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects-script.js"></script>
+</body>
+</html>

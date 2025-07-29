@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "id": "smart-campus",
+      "title": "Smart Campus Network",
+      "description": "IoT-enabled campus monitoring system with real-time data analytics.",
+      "placeholder": "Smart Campus",
+      "status": "active",
+      "category": "IoT Systems",
+      "featured": true,
+      "detailPage": "project-smart-campus.html"
+    },
+    {
+      "id": "ai-assistant",
+      "title": "AI Learning Assistant",
+      "description": "Machine learning powered educational companion for students.",
+      "placeholder": "AI Assistant",
+      "status": "development",
+      "category": "AI/ML",
+      "featured": true,
+      "detailPage": "project-ai-assistant.html"
+    },
+    {
+      "id": "energy-monitor",
+      "title": "Sustainable Energy Monitor",
+      "description": "Real-time energy consumption tracking and optimization system.",
+      "placeholder": "Green Tech",
+      "status": "planning",
+      "category": "Sustainability",
+      "featured": true,
+      "detailPage": "project-energy-monitor.html"
+    },
+    {
+      "id": "smart-parking",
+      "title": "Smart Parking System",
+      "description": "Automated parking management with real-time space detection and mobile app integration.",
+      "placeholder": "Parking Tech",
+      "status": "active",
+      "category": "IoT Systems",
+      "featured": false,
+      "detailPage": "project-smart-parking.html"
+    },
+    {
+      "id": "weather-station",
+      "title": "IoT Weather Station",
+      "description": "Comprehensive weather monitoring system with predictive analytics and alerts.",
+      "placeholder": "Weather IoT",
+      "status": "completed",
+      "category": "Environmental",
+      "featured": false,
+      "detailPage": "project-weather-station.html"
+    }
+  ]
+}
