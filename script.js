@@ -94,6 +94,11 @@ function getStatusLabel(status) {
 // Initialize projects when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     loadProjects();
+    
+    // Add a small delay to ensure all elements are loaded
+    setTimeout(() => {
+        initializeEventsFilter();
+    }, 100);
 });
 
 // Mobile Navigation Toggle
@@ -756,20 +761,31 @@ document.querySelectorAll('a, button, .about-card, .project-card, .team-card').f
 });
 
 // Events Filter Functionality
-document.addEventListener('DOMContentLoaded', function() {
+function initializeEventsFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const eventCards = document.querySelectorAll('.event-card-detailed');
     
+    console.log('Filter buttons found:', filterButtons.length);
+    console.log('Event cards found:', eventCards.length);
+    
     // Only add event listeners if we're on the events page
     if (filterButtons.length > 0 && eventCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
+        console.log('Initializing events filter...');
+        
+        filterButtons.forEach((button, index) => {
+            console.log(`Adding click listener to button ${index}:`, button.textContent);
+            
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Filter button clicked:', this.getAttribute('data-filter'));
+                
                 // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 // Add active class to clicked button
-                button.classList.add('active');
+                this.classList.add('active');
                 
-                const filterValue = button.getAttribute('data-filter');
+                const filterValue = this.getAttribute('data-filter');
+                console.log('Filtering by:', filterValue);
                 
                 // Show/hide event cards based on filter
                 eventCards.forEach(card => {
@@ -778,14 +794,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (filterValue === 'all') {
                         // Show all cards
                         card.style.display = 'flex';
-                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        card.style.opacity = '1';
                     } else {
                         // Check if card matches the filter
                         if (cardCategories && cardCategories.includes(filterValue)) {
                             card.style.display = 'flex';
-                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                            card.style.opacity = '1';
                         } else {
                             card.style.display = 'none';
+                            card.style.opacity = '0';
                         }
                     }
                 });
@@ -794,8 +811,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateSectionTitles(filterValue);
             });
         });
+    } else {
+        console.log('Events filter not initialized - elements not found');
+        console.log('Current page URL:', window.location.href);
     }
-});
+}
 
 // Function to update section titles based on active filter
 function updateSectionTitles(filterValue) {
