@@ -182,32 +182,6 @@ function loadFallbackProjectsDetailed() {
                 features: getProjectFeatures('smart-campus'),
                 techStack: getProjectTechStack('IoT Systems'),
                 detailedDescription: getDetailedDescription('smart-campus')
-            },
-            {
-                id: "ai-assistant",
-                title: "AI Learning Assistant",
-                description: "Machine learning powered educational companion for students.",
-                placeholder: "AI Assistant",
-                status: "development",
-                category: "AI/ML",
-                featured: true,
-                detailPage: "project-ai-assistant.html",
-                features: getProjectFeatures('ai-assistant'),
-                techStack: getProjectTechStack('AI/ML'),
-                detailedDescription: getDetailedDescription('ai-assistant')
-            },
-            {
-                id: "energy-monitor",
-                title: "Sustainable Energy Monitor",
-                description: "Real-time energy consumption tracking and optimization system.",
-                placeholder: "Green Tech",
-                status: "planning",
-                category: "Sustainability",
-                featured: true,
-                detailPage: "project-energy-monitor.html",
-                features: getProjectFeatures('energy-monitor'),
-                techStack: getProjectTechStack('Sustainability'),
-                detailedDescription: getDetailedDescription('energy-monitor')
             }
         ]
     };
