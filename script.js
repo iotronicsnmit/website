@@ -754,3 +754,80 @@ document.querySelectorAll('a, button, .about-card, .project-card, .team-card').f
         }
     });
 });
+
+// Events Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const eventCards = document.querySelectorAll('.event-card-detailed');
+    
+    // Only add event listeners if we're on the events page
+    if (filterButtons.length > 0 && eventCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide event cards based on filter
+                eventCards.forEach(card => {
+                    const cardCategories = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all') {
+                        // Show all cards
+                        card.style.display = 'flex';
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        // Check if card matches the filter
+                        if (cardCategories && cardCategories.includes(filterValue)) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+                
+                // Update section titles visibility based on filter
+                updateSectionTitles(filterValue);
+            });
+        });
+    }
+});
+
+// Function to update section titles based on active filter
+function updateSectionTitles(filterValue) {
+    const upcomingSection = document.querySelector('.events-detailed h2:first-of-type');
+    const pastSection = document.querySelector('.events-detailed h2:last-of-type');
+    const upcomingGrid = upcomingSection ? upcomingSection.nextElementSibling : null;
+    const pastGrid = pastSection ? pastSection.nextElementSibling : null;
+    
+    if (filterValue === 'all') {
+        // Show both sections
+        if (upcomingSection) upcomingSection.style.display = 'block';
+        if (pastSection) pastSection.style.display = 'block';
+        if (upcomingGrid) upcomingGrid.style.display = 'grid';
+        if (pastGrid) pastGrid.style.display = 'grid';
+    } else if (filterValue === 'upcoming') {
+        // Show only upcoming section
+        if (upcomingSection) upcomingSection.style.display = 'block';
+        if (pastSection) pastSection.style.display = 'none';
+        if (upcomingGrid) upcomingGrid.style.display = 'grid';
+        if (pastGrid) pastGrid.style.display = 'none';
+    } else if (filterValue === 'past') {
+        // Show only past section
+        if (upcomingSection) upcomingSection.style.display = 'none';
+        if (pastSection) pastSection.style.display = 'block';
+        if (upcomingGrid) upcomingGrid.style.display = 'none';
+        if (pastGrid) pastGrid.style.display = 'grid';
+    } else {
+        // For specific categories (workshop, hackathon, talk), show both sections
+        // but let the card filtering handle which cards are visible
+        if (upcomingSection) upcomingSection.style.display = 'block';
+        if (pastSection) pastSection.style.display = 'block';
+        if (upcomingGrid) upcomingGrid.style.display = 'grid';
+        if (pastGrid) pastGrid.style.display = 'grid';
+    }
+}

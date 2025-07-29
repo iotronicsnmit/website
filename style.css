@@ -1249,6 +1249,28 @@ section.in-view::before {
     
     .events-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding: 0 var(--space-md);
+    }
+    
+    .event-card-detailed {
+        max-width: 100%;
+        margin: 0 auto;
+        min-width: 280px;
+    }
+    
+    .events-filter {
+        gap: var(--space-xs);
+        padding: 0 var(--space-md);
+    }
+    
+    .filter-btn {
+        font-size: var(--font-size-xs);
+        padding: var(--space-xs) var(--space-sm);
+    }
+    
+    .events-detailed {
+        padding: var(--space-2xl) 0;
     }
     
     .newsletter-form {
@@ -1892,7 +1914,7 @@ html {
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
 }
