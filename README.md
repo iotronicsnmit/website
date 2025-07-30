@@ -19,13 +19,14 @@ The website is automatically deployed via Netlify and updates whenever changes a
 ### 📱 Complete Website Structure
 - **Homepage**: Hero section with IoT animations, about, featured projects, team preview, events preview
 - **Projects Page**: Dedicated page with JSON-based project management system
-- **Team Page**: Complete team member profiles and roles
-- **Events Page**: Upcoming workshops, hackathons, and tech talks
+- **Team Page**: Complete team member profiles with LinkedIn integration and mobile-responsive cards
+- **Events Page**: Dynamic events system with JSON-based management, filtering, and capacity tracking
 - **Individual Project Pages**: Detailed project showcases
 
 ### ⚡ Technical Excellence
-- **JSON-Based Content Management**: Easy project addition through `data/projects.json`
-- **Mobile-First Design**: Responsive navigation with hamburger menu
+- **JSON-Based Content Management**: Easy content management through `data/projects.json` and `data/events.json`
+- **Dynamic Event System**: Automatic event loading, filtering, and responsive design
+- **Mobile-First Design**: Responsive navigation with hamburger menu and optimized layouts
 - **Modern CSS**: Glassmorphism effects, gradient backgrounds, smooth transitions
 - **Vanilla JavaScript**: No external dependencies, fast loading
 - **SEO Optimized**: Semantic HTML structure and meta tags
@@ -49,12 +50,41 @@ iotronics-website/
 ├── style.css              # Main stylesheet with responsive design
 ├── script.js              # Homepage JavaScript functionality
 ├── projects-script.js     # Projects page specific functionality
+├── events-script.js       # Events page dynamic loading and filtering
 ├── data/
-│   └── projects.json      # JSON database for easy project management
+│   ├── projects.json      # JSON database for easy project management
+│   └── events.json        # JSON database for events management
 ├── HOW-TO-ADD-PROJECTS.md # Documentation for adding new projects
+├── EVENTS_README.md       # Documentation for adding and managing events
 ├── README.md              # This file
 └── .gitignore            # Git ignore rules
 ```
+
+## 🎯 Content Management Systems
+
+### 📊 Projects Management
+- **File**: `data/projects.json`
+- **Documentation**: `HOW-TO-ADD-PROJECTS.md`
+- **Features**: JSON-based project addition, dynamic filtering, responsive cards
+- **Easy Updates**: Simply edit JSON file - no HTML knowledge required
+
+### 📅 Events Management  
+- **File**: `data/events.json`
+- **Documentation**: `EVENTS_README.md` 
+- **Features**: JSON-based event addition, automatic filtering, capacity tracking, dynamic loading
+- **Event Types**: Workshops, Hackathons, Tech Talks, Competitions, Networking
+- **Smart Display**: Automatic upcoming/past event categorization
+
+### 👥 Team Management
+- **File**: `team.html`
+- **Features**: Responsive team cards, LinkedIn integration, mobile-optimized layout
+- **Recent Fixes**: Text overflow issues resolved, center alignment improved, mobile responsiveness enhanced
+
+### 🔧 Technical Features
+- **Dynamic Loading**: All content loads from JSON files automatically
+- **Responsive Design**: Mobile-first approach with optimized breakpoints
+- **Performance**: Fast loading with no external dependencies
+- **Accessibility**: Proper semantic HTML and keyboard navigation
 
 ## 🚀 Automatic Deployment
 
@@ -75,6 +105,28 @@ This repository is connected to **Netlify** for automatic deployment:
 ## 👥 Contributing Workflow
 
 **⚠️ IMPORTANT: Always use branches for development work!**
+
+## 🚀 Quick Start Guide
+
+### ⚡ Adding New Content (No Coding Required!)
+
+#### 📊 Adding a New Project
+1. Open `data/projects.json`
+2. Copy the template from `HOW-TO-ADD-PROJECTS.md`
+3. Fill in your project details
+4. Save and commit - project appears automatically!
+
+#### 📅 Adding a New Event
+1. Open `data/events.json`
+2. Copy the template from the `eventSchema` section
+3. Fill in your event details
+4. Save and commit - event appears automatically!
+
+#### 👥 Updating Team Information
+1. Open `team.html`
+2. Find the team member card to update
+3. Edit name, role, department, bio, or LinkedIn URL
+4. Save and commit changes
 
 ### Branch-Based Development:
 1. Create a new branch for your feature/fix
