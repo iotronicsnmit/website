@@ -2792,12 +2792,13 @@ html {
 }
 
 .flow-step {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     position: relative;
     text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 .step-number {
@@ -2834,16 +2835,18 @@ html {
 }
 
 .innovation-section {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .innovation-section h3 {
-    color: var(--accent-color);
+    color: #ffffff;
     margin-bottom: var(--space-lg);
     font-size: var(--font-size-xl);
+    font-weight: 600;
 }
 
 .innovation-section ul {
@@ -2855,20 +2858,21 @@ html {
     margin-bottom: var(--space-md);
     padding-left: var(--space-md);
     position: relative;
-    color: var(--text-secondary);
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
 .innovation-section li::before {
     content: '•';
-    color: var(--accent-color);
+    color: #00ff9f;
     position: absolute;
     left: 0;
     font-weight: bold;
 }
 
 .innovation-section li strong {
-    color: var(--text-primary);
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .back-to-projects {
@@ -2928,6 +2932,16 @@ html {
     .team-timeline-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .system-flow {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .innovation-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
     
     .back-content {
