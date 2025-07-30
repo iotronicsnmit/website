@@ -5,7 +5,7 @@ A modern, responsive website for the Iotronics college club showcasing IoT innov
 ## 🌐 Live Website
 
 The website is automatically deployed via Netlify and updates whenever changes are pushed to the main branch.
-**Live URL**: [Your Netlify URL will appear here after deployment]
+**Live URL**: [\[Your Netlify URL will appear here after deployment\]](https://iotronics.netlify.app/)
 
 ## 🚀 Key Features
 
