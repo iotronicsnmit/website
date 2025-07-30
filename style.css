@@ -2825,9 +2825,10 @@ html {
 }
 
 .step-content h4 {
-    color: var(--text-primary);
+    color: #1a1a1a;
     margin-bottom: var(--space-sm);
     font-size: var(--font-size-lg);
+    font-weight: 600;
 }
 
 .step-content p {
@@ -2836,41 +2837,41 @@ html {
     font-size: var(--font-size-sm);
 }
 
-/* Different colored flow steps */
+/* Unified theme colored flow steps */
 .flow-step-1 {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
-    border: 1px solid rgba(255, 107, 107, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(102, 126, 234, 0.04));
+    border: 1px solid rgba(102, 126, 234, 0.15);
 }
 
 .flow-step-1 .step-number {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    background: linear-gradient(135deg, #667eea, #5a67d8);
 }
 
 .flow-step-2 {
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.05));
-    border: 1px solid rgba(74, 222, 128, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.05));
+    border: 1px solid rgba(102, 126, 234, 0.18);
 }
 
 .flow-step-2 .step-number {
-    background: linear-gradient(135deg, #4ade80, #22c55e);
+    background: linear-gradient(135deg, #7c3aed, #667eea);
 }
 
 .flow-step-3 {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(102, 126, 234, 0.06));
+    border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .flow-step-3 .step-number {
-    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
 }
 
 .flow-step-4 {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.14), rgba(102, 126, 234, 0.07));
+    border: 1px solid rgba(102, 126, 234, 0.22);
 }
 
 .flow-step-4 .step-number {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
 }
 
 /* Innovation Grid Styles */
