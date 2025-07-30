@@ -2678,6 +2678,24 @@ html {
     font-size: 0.9rem;
 }
 
+.member-info small {
+    color: #007aff;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.member-info small a {
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.member-info small a:hover {
+    color: #0056cc;
+    text-decoration: underline;
+}
+
 .timeline {
     position: relative;
 }
