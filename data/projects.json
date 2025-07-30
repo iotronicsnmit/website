@@ -9,6 +9,16 @@
       "category": "IoT Systems",
       "featured": true,
       "detailPage": "project-smart-campus.html"
+    },
+    {
+      "id": "swat-water-tracking",
+      "title": "SWAT - Water Tracking System",
+      "description": "Satellite-based water analysis and tracking system for water tanker monitoring with GPS and cellular connectivity.",
+      "placeholder": "SWAT System",
+      "status": "active",
+      "category": "IoT Systems",
+      "featured": true,
+      "detailPage": "project-swat.html"
     }
   ]
 }

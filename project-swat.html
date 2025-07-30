@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT - Satellite Based Water Analysis and Tracking - Iotronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><span class="logo-text">Iotronics</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> / SWAT - Water Tracking System
+            </div>
+            <div class="project-hero-content">
+                <div class="project-status-hero">
+                    <span class="status-badge active">Active Development</span>
+                </div>
+                <h1 class="project-title">SWAT</h1>
+                <h2 class="project-subtitle-small">Satellite Based Water Analysis and Tracking</h2>
+                <p class="project-subtitle">
+                    A comprehensive IoT solution for real-time water tanker monitoring and tracking system designed to combat water tanker mafias and ensure transparent water distribution through GPS tracking and automated water level detection.
+                </p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 6 months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Team Size:</strong> 2 members
+                    </div>
+                    <div class="meta-item">
+                        <strong>Category:</strong> IoT Systems
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Problem Statement</h2>
+                    <p>
+                        Managing and tracking water levels in moving water tankers poses significant challenges in 
+                        the logistics and utility sectors. Most current systems do not provide a reliable, real-time 
+                        solution for determining whether a tanker is filled, partially filled, or empty. Additionally, 
+                        GPS-based tracking of tankers is essential for operational transparency and monitoring, 
+                        providing a counter measurement to water tanker mafias.
+                    </p>
+                    <h3>Key Objectives</h3>
+                    <ul>
+                        <li>Develop a prototype using GPS functionality for real-time tanker tracking</li>
+                        <li>Integrate sensor that monitors water level using external non-contact sensor</li>
+                        <li>Transmit sensor and location data over cellular network</li>
+                        <li>Visualize data using cloud-based platform with dashboard and map widget</li>
+                        <li>Ensure scalable design for real-world deployment</li>
+                    </ul>
+                </div>
+                <div class="overview-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">4G/LTE</div>
+                        <div class="stat-label">Cellular Network</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Autonomous Operation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">GPS Tracking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="project-technical">
+        <div class="container">
+            <h2>Technical Implementation</h2>
+            <div class="technical-grid">
+                <div class="tech-section">
+                    <h3>Hardware Components</h3>
+                    <ul>
+                        <li><strong>Arduino Uno R4 Wi-Fi:</strong> Central control unit for processing</li>
+                        <li><strong>JSN-SR04T:</strong> Waterproof ultrasonic sensor for water level detection</li>
+                        <li><strong>SIM A7672S Dev Board:</strong> GSM/LTE + GNSS module for communication and GPS</li>
+                        <li><strong>Power Supply Module:</strong> DC power supply with breakout boards</li>
+                        <li><strong>IP65 Enclosure:</strong> Transparent waterproof protection</li>
+                    </ul>
+                </div>
+                <div class="tech-section">
+                    <h3>Software Stack</h3>
+                    <ul>
+                        <li><strong>Firmware:</strong> Arduino IDE for code development</li>
+                        <li><strong>Communication:</strong> AT Commands for GSM/GNSS modules</li>
+                        <li><strong>Protocols:</strong> HTTP/HTTPS/MQTT for data transmission</li>
+                        <li><strong>Cloud Platform:</strong> TagoIO for device linking and visualization</li>
+                        <li><strong>Security:</strong> HTTPS encryption for secure data transfer</li>
+                    </ul>
+                </div>
+                <div class="tech-section">
+                    <h3>Network Infrastructure</h3>
+                    <ul>
+                        <li><strong>4G/LTE Network:</strong> Primary communication over cellular network</li>
+                        <li><strong>2G Compatibility:</strong> Backward compatible for wider coverage</li>
+                        <li><strong>GNSS Module:</strong> Satellite-based GPS positioning</li>
+                        <li><strong>SIM Card:</strong> Standard nano SIM with data plan</li>
+                        <li><strong>Real-time Dashboard:</strong> Live monitoring with map widget</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="project-features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">Monitor</div>
+                    <h3>Water Level Monitoring</h3>
+                    <p>Non-contact ultrasonic sensor provides accurate water level detection in real-time without compromising tanker integrity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">GPS</div>
+                    <h3>GPS Tracking</h3>
+                    <p>Continuous satellite-based location tracking with tamper-proof design preventing unauthorized disable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">Cloud</div>
+                    <h3>Cloud Dashboard</h3>
+                    <p>Real-time visualization on TagoIO platform with map widget showing tanker location and water status.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">Security</div>
+                    <h3>Anti-Tampering</h3>
+                    <p>Autonomous system design prevents driver manipulation with secure hardware installation and encrypted communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Flow -->
+    <section class="project-technical">
+        <div class="container">
+            <h2>System Flow & Architecture</h2>
+            <div class="system-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Data Collection</h4>
+                        <p>JSN-SR04T collects water level data while SIM A7672S collects GPS location from satellites</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Processing</h4>
+                        <p>Arduino Uno R4 reads both data points and processes the combined information</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Transmission</h4>
+                        <p>Data sent through GSM/LTE network using SIM A7672S over secure HTTP/HTTPS protocols</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Visualization</h4>
+                        <p>TagoIO dashboard displays tanker location on map and current water level status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Timeline -->
+    <section class="project-team-timeline">
+        <div class="container">
+            <div class="team-timeline-grid">
+                <div class="project-team-section">
+                    <h2>Project Team</h2>
+                    <div class="team-members">
+                        <div class="member-item">
+                            <div class="member-avatar">RV</div>
+                            <div class="member-info">
+                                <h4>Rounak Vyas</h4>
+                                <p>Designer and Developer</p>
+                                <small>rounakvyas7@gmail.com</small>
+                            </div>
+                        </div>
+                        <div class="member-item">
+                            <div class="member-avatar">RS</div>
+                            <div class="member-info">
+                                <h4>Rohit Soni</h4>
+                                <p>Co-Designer</p>
+                                <small>1nt23ee044.rohit@nmit.ac.in</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-timeline-section">
+                    <h2>Development Timeline</h2>
+                    <div class="timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Phase 1: Research & Documentation</h4>
+                                <p>Problem analysis, component selection, and system architecture design</p>
+                                <span class="timeline-date">Completed - May 2025</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Phase 2: Hardware Integration</h4>
+                                <p>Component testing, circuit design, and sensor calibration</p>
+                                <span class="timeline-date">Completed - Jun 2025</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item active">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Phase 3: Software Development</h4>
+                                <p>Firmware development, cloud integration, and dashboard setup</p>
+                                <span class="timeline-date">In Progress - Aug 2025</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Phase 4: Field Testing & Deployment</h4>
+                                <p>Real-world testing, optimization, and deployment preparation</p>
+                                <span class="timeline-date">Planned - Oct 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation & Future Scope -->
+    <section class="project-impact">
+        <div class="container">
+            <h2>Innovation & Future Scope</h2>
+            <div class="innovation-grid">
+                <div class="innovation-section">
+                    <h3>Project Highlights</h3>
+                    <ul>
+                        <li><strong>4G/LTE Communication:</strong> Advanced cellular network instead of 2G for faster, reliable data transmission</li>
+                        <li><strong>Autonomous Design:</strong> Tamper-proof system preventing unauthorized access or GPS disable</li>
+                        <li><strong>Universal Compatibility:</strong> Suitable for both hybrid and non-hybrid water tankers</li>
+                        <li><strong>External Installation:</strong> Non-invasive sensor placement on tanker body</li>
+                    </ul>
+                </div>
+                <div class="innovation-section">
+                    <h3>Additional Features (Future)</h3>
+                    <ul>
+                        <li><strong>Fuel Tank Monitoring:</strong> Track vehicle fuel levels for complete logistics management</li>
+                        <li><strong>Tire Pressure Monitoring:</strong> Ensure vehicle safety and maintenance alerts</li>
+                        <li><strong>Driver Details:</strong> Store and track driver information and contact details</li>
+                        <li><strong>Vehicle Information:</strong> Complete vehicle registry with color, number plate data</li>
+                    </ul>
+                </div>
+                <div class="innovation-section">
+                    <h3>Business Model & Government Support</h3>
+                    <ul>
+                        <li><strong>Government Initiatives:</strong> Aligned with "Sanchari Cauvery" (Karnataka) and Delhi's GPS-enabled tankers</li>
+                        <li><strong>Funding Opportunities:</strong> Startup India Seed Fund, Electronics Development Fund, AIM programs</li>
+                        <li><strong>Public-Private Partnership:</strong> Deployment through municipal corporations and water boards</li>
+                        <li><strong>Cost Optimization:</strong> Custom PCB design and bulk procurement for scalable deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="back-to-projects">
+        <div class="container">
+            <div class="back-content">
+                <a href="projects.html" class="btn-secondary">← Back to All Projects</a>
+                <div class="project-nav">
+                    <a href="project-smart-campus.html" class="btn-outline">Previous Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Iotronics</span>
+                    <p>Innovating Tomorrow</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="events.html">Events</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Iotronics Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

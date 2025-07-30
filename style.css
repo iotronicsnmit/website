@@ -1568,6 +1568,29 @@ section.in-view::before {
         font-size: var(--font-size-xs);
         padding: var(--space-xs) var(--space-sm);
     }
+    
+    /* Mobile responsive for new project elements */
+    .system-flow {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .flow-step {
+        padding: var(--space-md);
+    }
+    
+    .innovation-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .innovation-section {
+        padding: var(--space-md);
+    }
+    
+    .project-subtitle-small {
+        font-size: 1rem;
+    }
 }
 
 /* Smooth scrolling */
@@ -2374,6 +2397,15 @@ html {
     margin-bottom: 30px;
 }
 
+.project-subtitle-small {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .project-meta {
     display: flex;
     gap: 40px;
@@ -2749,6 +2781,94 @@ html {
 .impact-metric p {
     opacity: 0.8;
     line-height: 1.5;
+}
+
+/* System Flow Styles */
+.system-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.flow-step {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    text-align: center;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 auto var(--space-md);
+}
+
+.step-content h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-lg);
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: var(--font-size-sm);
+}
+
+/* Innovation Grid Styles */
+.innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+}
+
+.innovation-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.innovation-section h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-xl);
+}
+
+.innovation-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.innovation-section li {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-md);
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.innovation-section li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.innovation-section li strong {
+    color: var(--text-primary);
 }
 
 .back-to-projects {
