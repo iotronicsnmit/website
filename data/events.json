@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "id": "iot-workshop-aug-2025",
+      "title": "IoT Fundamentals Workshop",
+      "type": "Workshop",
+      "status": "upcoming",
+      "date": {
+        "month": "Aug",
+        "day": "15",
+        "year": "2025",
+        "full": "2025-08-15"
+      },
+      "time": "2:00 PM - 6:00 PM",
+      "location": "Innovation Lab, Room 302",
+      "description": "Hands-on workshop covering Arduino, Raspberry Pi, and sensor integration. Perfect for beginners looking to get started with IoT development.",
+      "capacity": {
+        "total": 25,
+        "registered": 10,
+        "available": 15
+      },
+      "tags": ["Beginner Friendly", "Hands-on", "Arduino"],
+      "registration": {
+        "url": "#",
+        "buttonText": "Register Now"
+      }
+    },
+    {
+      "id": "ai-iot-hackathon-sep-2025",
+      "title": "AI & IoT Hackathon 2025",
+      "type": "Hackathon",
+      "status": "upcoming",
+      "date": {
+        "month": "Sep",
+        "day": "02",
+        "year": "2025",
+        "full": "2025-09-02"
+      },
+      "time": "Friday 6:00 PM - Sunday 6:00 PM",
+      "location": "Engineering Building",
+      "description": "48-hour hackathon focusing on artificial intelligence and IoT solutions. Collaborate with teams to build innovative projects with mentorship from industry experts.",
+      "capacity": {
+        "total": 20,
+        "registered": 12,
+        "available": 8,
+        "unit": "teams"
+      },
+      "tags": ["Competition", "AI/ML", "Prizes"],
+      "registration": {
+        "url": "#",
+        "buttonText": "Form Team"
+      }
+    }
+  ],
+  "eventSchema": {
+    "instructions": "To add a new event, copy the template below and fill in all required fields",
+    "template": {
+      "id": "unique-event-id-here",
+      "title": "Event Title Here",
+      "type": "Workshop|Hackathon|Tech Talk|Competition|Networking",
+      "status": "upcoming|past",
+      "date": {
+        "month": "3-letter month (Jan, Feb, Mar, etc.)",
+        "day": "Day number (1-31)",
+        "year": "4-digit year",
+        "full": "YYYY-MM-DD format for sorting"
+      },
+      "time": "Event time range",
+      "location": "Event location/venue",
+      "description": "Detailed description of the event",
+      "capacity": {
+        "total": "Total capacity number",
+        "registered": "Current registrations",
+        "available": "Available spots (calculated)",
+        "unit": "Optional: 'teams' or leave empty for individuals"
+      },
+      "tags": ["Tag1", "Tag2", "Tag3"],
+      "registration": {
+        "url": "Registration URL or # for placeholder",
+        "buttonText": "Register Now|Form Team|Reserve Seat|etc."
+      }
+    },
+    "notes": [
+      "- ID should be unique and URL-friendly (lowercase, hyphens for spaces)",
+      "- Status determines if event appears in upcoming or past section",
+      "- Tags should be short and descriptive",
+      "- Capacity unit is optional, defaults to 'individuals' if not specified",
+      "- For past events, you can replace capacity with attendance data",
+      "- Date.full is used for sorting events chronologically"
+    ]
+  }
+}
