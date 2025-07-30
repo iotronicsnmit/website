@@ -2397,6 +2397,15 @@ html {
     margin-bottom: 30px;
 }
 
+.project-subtitle-highlight {
+    font-size: 1.4rem;
+    color: #00ff9f;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
 .project-subtitle-small {
     font-size: 1.1rem;
     color: var(--accent-color);
@@ -2827,6 +2836,43 @@ html {
     font-size: var(--font-size-sm);
 }
 
+/* Different colored flow steps */
+.flow-step-1 {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.flow-step-1 .step-number {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+.flow-step-2 {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.05));
+    border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.flow-step-2 .step-number {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.flow-step-3 {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.flow-step-3 .step-number {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.flow-step-4 {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.flow-step-4 .step-number {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
 /* Innovation Grid Styles */
 .innovation-grid {
     display: grid;
@@ -2913,6 +2959,10 @@ html {
 @media (max-width: 768px) {
     .project-title {
         font-size: 2.5rem;
+    }
+    
+    .project-subtitle-highlight {
+        font-size: 1.2rem;
     }
     
     .project-meta {

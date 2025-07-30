@@ -41,8 +41,9 @@
                     <span class="status-badge active">Active Development</span>
                 </div>
                 <h1 class="project-title">SWAT</h1>
+                <h2 class="project-subtitle-highlight">Satellite Based Water Analysis and Tracking</h2>
                 <p class="project-subtitle">
-                    Satellite Based Water Analysis and Tracking - A comprehensive IoT solution for real-time water tanker monitoring and tracking system designed to combat water tanker mafias and ensure transparent water distribution through GPS tracking and automated water level detection.
+                    A comprehensive IoT solution for real-time water tanker monitoring and tracking system designed to combat water tanker mafias and ensure transparent water distribution through GPS tracking and automated water level detection.
                 </p>
                 <div class="project-meta">
                     <div class="meta-item">
@@ -172,28 +173,28 @@
         <div class="container">
             <h2>System Flow & Architecture</h2>
             <div class="system-flow">
-                <div class="flow-step">
+                <div class="flow-step flow-step-1">
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h4>Data Collection</h4>
                         <p>JSN-SR04T collects water level data while SIM A7672S collects GPS location from satellites</p>
                     </div>
                 </div>
-                <div class="flow-step">
+                <div class="flow-step flow-step-2">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h4>Processing</h4>
                         <p>Arduino Uno R4 reads both data points and processes the combined information</p>
                     </div>
                 </div>
-                <div class="flow-step">
+                <div class="flow-step flow-step-3">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h4>Transmission</h4>
                         <p>Data sent through GSM/LTE network using SIM A7672S over secure HTTP/HTTPS protocols</p>
                     </div>
                 </div>
-                <div class="flow-step">
+                <div class="flow-step flow-step-4">
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h4>Visualization</h4>
