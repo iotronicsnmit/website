@@ -1309,6 +1309,9 @@ section.in-view::before {
     
     .projects-grid-detailed {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding: 0 var(--space-md);
+        max-width: 100%;
     }
     
     .events-grid {
@@ -1540,6 +1543,30 @@ section.in-view::before {
     .benefit-item {
         padding: var(--space-sm);
         margin: 0 var(--space-xs);
+    }
+    
+    /* Projects Mobile Responsive */
+    .projects-grid-detailed {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        padding: 0 var(--space-sm);
+    }
+    
+    .project-card-detailed {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .projects-filter {
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        padding: 0 var(--space-sm);
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: var(--font-size-xs);
+        padding: var(--space-xs) var(--space-sm);
     }
 }
 
@@ -1968,8 +1995,11 @@ html {
 
 .projects-grid-detailed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .project-card-detailed {
@@ -1980,6 +2010,8 @@ html {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    max-width: 450px;
 }
 
 .project-image-detailed {
