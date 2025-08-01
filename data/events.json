@@ -20,6 +20,15 @@
         "available": 15
       },
       "tags": ["Beginner Friendly", "Hands-on", "Arduino"],
+      "agenda": [
+        "Introduction to IoT concepts and applications",
+        "Hands-on Arduino programming session",
+        "Sensor integration and data collection",
+        "Building your first IoT project",
+        "Project showcase and Q&A"
+      ],
+      "prerequisites": "No prior experience required. Bring your laptop!",
+      "organizers": ["IoTronics Core Team", "Dr. Sarah Johnson"],
       "registration": {
         "url": "#",
         "buttonText": "Register Now"
@@ -46,9 +55,52 @@
         "unit": "teams"
       },
       "tags": ["Competition", "AI/ML", "Prizes"],
+      "agenda": [
+        "Team registration and formation",
+        "Problem statement reveal and Q&A",
+        "48-hour development phase with mentor support",
+        "Project submission and presentation",
+        "Judging and prize ceremony"
+      ],
+      "prerequisites": "Programming experience in Python or JavaScript recommended. Teams of 3-4 members.",
+      "organizers": ["IoTronics Club", "AI Society", "Industry Mentors"],
       "registration": {
         "url": "#",
         "buttonText": "Form Team"
+      }
+    },
+    {
+      "id": "raspberry-pi-workshop-jul-2025",
+      "title": "Advanced Raspberry Pi Programming",
+      "type": "Workshop",
+      "status": "past",
+      "date": {
+        "month": "Jul",
+        "day": "20",
+        "year": "2025",
+        "full": "2025-07-20"
+      },
+      "time": "10:00 AM - 4:00 PM",
+      "location": "Tech Lab, Building A",
+      "description": "An intensive workshop on advanced Raspberry Pi programming, including GPIO control, camera modules, and IoT integration. Participants built real-world projects.",
+      "capacity": {
+        "total": 30,
+        "registered": 28,
+        "unit": "participants"
+      },
+      "tags": ["Advanced", "Raspberry Pi", "Hands-on"],
+      "agenda": [
+        "Advanced GPIO programming techniques",
+        "Camera module and image processing",
+        "IoT protocol implementation",
+        "Project: Smart security camera system",
+        "Showcase and feedback session"
+      ],
+      "prerequisites": "Basic programming knowledge and prior experience with Raspberry Pi required",
+      "organizers": ["Prof. Mike Chen", "IoTronics Advanced Team"],
+      "registration": {
+        "url": "#",
+        "buttonText": "View Materials"
       }
     }
   ],

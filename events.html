@@ -87,6 +87,75 @@
         </div>
     </section>
 
+    <!-- Event Detail Modal -->
+    <div id="eventModal" class="event-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Event Title</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-event-info">
+                    <div class="modal-date-time">
+                        <div class="modal-date">
+                            <div class="modal-month" id="modalMonth">Aug</div>
+                            <div class="modal-day" id="modalDay">15</div>
+                            <div class="modal-year" id="modalYear">2025</div>
+                        </div>
+                        <div class="modal-time-location">
+                            <div class="modal-time" id="modalTime">2:00 PM - 6:00 PM</div>
+                            <div class="modal-location" id="modalLocation">Innovation Lab, Room 302</div>
+                        </div>
+                    </div>
+                    <div class="modal-type-badge" id="modalType">Workshop</div>
+                </div>
+                
+                <div class="modal-description">
+                    <h3>About This Event</h3>
+                    <p id="modalDescription">Event description will appear here...</p>
+                </div>
+
+                <div class="modal-details-grid">
+                    <div class="modal-capacity" id="modalCapacity">
+                        <h4>Capacity</h4>
+                        <p>Available spots: <span id="modalAvailable">15</span>/<span id="modalTotal">25</span></p>
+                    </div>
+                    
+                    <div class="modal-agenda" id="modalAgenda">
+                        <h4>Agenda</h4>
+                        <ul id="modalAgendaList">
+                            <li>Introduction to IoT concepts</li>
+                            <li>Hands-on Arduino programming</li>
+                            <li>Sensor integration workshop</li>
+                            <li>Project showcase</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-prerequisites" id="modalPrerequisites">
+                        <h4>Prerequisites</h4>
+                        <p id="modalPrereqText">Basic programming knowledge recommended</p>
+                    </div>
+                    
+                    <div class="modal-organizers" id="modalOrganizers">
+                        <h4>Organizers</h4>
+                        <div id="modalOrganizersList">
+                            <span class="organizer">IoTronics Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-tags" id="modalTags">
+                    <!-- Tags will be populated dynamically -->
+                </div>
+
+                <div class="modal-actions">
+                    <a href="#" id="modalRegisterBtn" class="btn-primary">Register Now</a>
+                    <button class="btn-secondary modal-close-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
