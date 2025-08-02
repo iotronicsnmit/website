@@ -103,11 +103,20 @@ class EventsManager {
         // Add click event listener for the entire card
         card.addEventListener('click', (e) => {
             // Don't trigger modal if clicking on buttons or links
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            if (e.target.tagName === 'A' || e.target.classList.contains('btn-primary') || e.target.classList.contains('btn-outline')) {
                 return;
             }
             this.showEventDetails(event);
         });
+
+        // Add specific click event for the View Details button
+        const viewDetailsBtn = card.querySelector('.view-details-btn');
+        if (viewDetailsBtn) {
+            viewDetailsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.showEventDetails(event);
+            });
+        }
 
         return card;
     }
@@ -250,8 +259,201 @@ class EventsManager {
         registerBtn.textContent = event.registration.buttonText;
         registerBtn.className = event.status === 'past' ? 'btn-outline' : 'btn-primary';
 
+        // Set up calendar button
+        const calendarBtn = document.getElementById('modalCalendarBtn');
+        if (event.status === 'upcoming') {
+            calendarBtn.style.display = 'inline-block';
+            calendarBtn.onclick = () => this.addToCalendar(event);
+        } else {
+            calendarBtn.style.display = 'none';
+        }
+
         // Show modal
         modal.style.display = 'block';
+    }
+
+    addToCalendar(event) {
+        // Create calendar dropdown or directly add to Google Calendar
+        const startDate = this.parseEventDate(event.date, event.time);
+        const endDate = this.calculateEndDate(startDate, event.time);
+        
+        // Format dates for calendar URL
+        const startDateStr = startDate.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        const endDateStr = endDate.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        
+        // Create Google Calendar URL
+        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${startDateStr}/${endDateStr}&details=${encodeURIComponent(event.description + '\n\nLocation: ' + event.location + '\n\nOrganized by: ' + (event.organizers ? event.organizers.join(', ') : 'IoTronics Club'))}&location=${encodeURIComponent(event.location)}`;
+        
+        // Show calendar options modal
+        this.showCalendarOptions(event, googleCalendarUrl, startDate, endDate);
+    }
+
+    parseEventDate(date, time) {
+        // Parse the event date and time
+        const year = parseInt(date.year);
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const month = monthNames.indexOf(date.month);
+        const day = parseInt(date.day);
+        
+        // Extract start time (assuming format like "2:00 PM - 6:00 PM")
+        const timeMatch = time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+        let hours = 14; // default 2 PM
+        let minutes = 0;
+        
+        if (timeMatch) {
+            hours = parseInt(timeMatch[1]);
+            minutes = parseInt(timeMatch[2]);
+            if (timeMatch[3].toUpperCase() === 'PM' && hours !== 12) hours += 12;
+            if (timeMatch[3].toUpperCase() === 'AM' && hours === 12) hours = 0;
+        }
+        
+        return new Date(year, month, day, hours, minutes);
+    }
+
+    calculateEndDate(startDate, timeString) {
+        // Try to parse end time from time string
+        const endTimeMatch = timeString.match(/- (\d{1,2}):(\d{2})\s*(AM|PM)/i);
+        if (endTimeMatch) {
+            let endHours = parseInt(endTimeMatch[1]);
+            const endMinutes = parseInt(endTimeMatch[2]);
+            if (endTimeMatch[3].toUpperCase() === 'PM' && endHours !== 12) endHours += 12;
+            if (endTimeMatch[3].toUpperCase() === 'AM' && endHours === 12) endHours = 0;
+            
+            const endDate = new Date(startDate);
+            endDate.setHours(endHours, endMinutes);
+            return endDate;
+        } else {
+            // Default to 2 hours later
+            const endDate = new Date(startDate);
+            endDate.setHours(endDate.getHours() + 2);
+            return endDate;
+        }
+    }
+
+    showCalendarOptions(event, googleCalendarUrl, startDate, endDate) {
+        // Create calendar options modal
+        const calendarModal = document.createElement('div');
+        calendarModal.className = 'calendar-modal';
+        calendarModal.innerHTML = `
+            <div class="calendar-modal-content">
+                <div class="calendar-modal-header">
+                    <h3>Add to Calendar</h3>
+                    <span class="calendar-modal-close">&times;</span>
+                </div>
+                <div class="calendar-modal-body">
+                    <p>Choose your preferred calendar:</p>
+                    <div class="calendar-options">
+                        <a href="${googleCalendarUrl}" target="_blank" class="calendar-option">
+                            <span class="calendar-icon">📅</span>
+                            <span>Google Calendar</span>
+                        </a>
+                        <button class="calendar-option" onclick="this.downloadICS(event)" data-event='${JSON.stringify(event)}' data-start='${startDate.toISOString()}' data-end='${endDate.toISOString()}'>
+                            <span class="calendar-icon">📁</span>
+                            <span>Download ICS File</span>
+                        </button>
+                        <button class="calendar-option" onclick="this.copyEventDetails(event)" data-event='${JSON.stringify(event)}'>
+                            <span class="calendar-icon">📋</span>
+                            <span>Copy Event Details</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(calendarModal);
+        calendarModal.style.display = 'block';
+
+        // Add event listeners
+        const closeBtn = calendarModal.querySelector('.calendar-modal-close');
+        closeBtn.addEventListener('click', () => {
+            document.body.removeChild(calendarModal);
+        });
+
+        calendarModal.addEventListener('click', (e) => {
+            if (e.target === calendarModal) {
+                document.body.removeChild(calendarModal);
+            }
+        });
+
+        // Add ICS download functionality
+        const icsBtn = calendarModal.querySelector('button[onclick*="downloadICS"]');
+        icsBtn.onclick = () => this.downloadICS(event, startDate, endDate);
+
+        // Add copy functionality
+        const copyBtn = calendarModal.querySelector('button[onclick*="copyEventDetails"]');
+        copyBtn.onclick = () => this.copyEventDetails(event);
+    }
+
+    downloadICS(event, startDate, endDate) {
+        const icsContent = this.generateICS(event, startDate, endDate);
+        const blob = new Blob([icsContent], { type: 'text/calendar' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${event.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.ics`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+
+    generateICS(event, startDate, endDate) {
+        const formatDate = (date) => {
+            return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        };
+
+        return `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IoTronics Club//Event Calendar//EN
+BEGIN:VEVENT
+UID:${event.id}@iotronics.club
+DTSTART:${formatDate(startDate)}
+DTEND:${formatDate(endDate)}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}\\n\\nLocation: ${event.location}\\n\\nOrganized by: ${event.organizers ? event.organizers.join(', ') : 'IoTronics Club'}
+LOCATION:${event.location}
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR`;
+    }
+
+    copyEventDetails(event) {
+        const eventDetails = `Event: ${event.title}
+Date: ${event.date.month} ${event.date.day}, ${event.date.year}
+Time: ${event.time}
+Location: ${event.location}
+Description: ${event.description}
+Registration: ${event.registration.url}`;
+
+        navigator.clipboard.writeText(eventDetails).then(() => {
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'copy-success';
+            successMsg.textContent = 'Event details copied to clipboard!';
+            document.body.appendChild(successMsg);
+            
+            setTimeout(() => {
+                document.body.removeChild(successMsg);
+            }, 2000);
+        }).catch(() => {
+            // Fallback for browsers that don't support clipboard API
+            const textArea = document.createElement('textarea');
+            textArea.value = eventDetails;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const successMsg = document.createElement('div');
+            successMsg.className = 'copy-success';
+            successMsg.textContent = 'Event details copied to clipboard!';
+            document.body.appendChild(successMsg);
+            
+            setTimeout(() => {
+                document.body.removeChild(successMsg);
+            }, 2000);
+        });
     }
 
     closeModal() {
